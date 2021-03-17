@@ -5,14 +5,14 @@ class SqlQueries:
     drop_facts = "DROP TABLE IF EXISTS facts;"
     drop_time = "DROP TABLE IF EXISTS time;"
 
-    create_staging_pollution = """CREATE TABLE staging_pollution (
+    create_staging_pollution = """CREATE TABLE IF NOT EXISTS staging_pollution (
         city varchar(256) NOT NULL,
         metric varchar(256),
         dt TIMESTAMP,
         value INTEGER
     );"""
 
-    create_staging_metar = """CREATE TABLE staging_pollution (
+    create_staging_metar = """CREATE TABLE IF NOT EXISTS staging_metar (
         city varchar(256) NOT NULL,
         metric varchar(256),
         dt TIMESTAMP,
